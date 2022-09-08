@@ -1,0 +1,44 @@
+server:
+  port: ${PORT:9000}
+minidao:
+  base-package: org.jeecg.modules.jmreport.desreport.dao*
+  db-type: mysql
+
+jeecg:
+  jmreport:
+    autoSave: true
+    interval: 10000
+  uploadType: local
+  path:
+    upload: ${UPLOAD_PATH:/tmp/images}
+  oss:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    accessKey: ??
+    secretKey: ??
+    staticDomain: ??
+    bucketName: ??
+  minio:
+    minio_url: http://minio.jeecg.com
+    minio_name: ??
+    minio_pass: ??
+    bucketName: ??
+
+logging:
+  level:
+    org.jeecg.modules.jmreport: info
+
+spring:
+  mvc:
+    static-path-pattern: /**
+  resource:
+    static-locations: classpath:/static/
+  datasource:
+    db-type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: ${DATABASE_URL:jdbc:mysql://127.0.0.1:3306/jimu}
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:root}
+  flyway:
+    baseline-on-migrate: true
+    enabled: true
+    placeholderReplacement: false
