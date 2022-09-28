@@ -10,7 +10,7 @@ jeecg:
     interval: 10000
   uploadType: local
   path:
-    upload: ${UPLOAD_PATH:/tmp/images}
+    upload: ${UPLOAD_PATH:.}
   oss:
     endpoint: oss-cn-beijing.aliyuncs.com
     accessKey: ??
@@ -35,9 +35,9 @@ spring:
   datasource:
     db-type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: ${DATABASE_URL:jdbc:mysql://127.0.0.1:3306/jimu}
+    url: ${DATABASE_URL:jdbc:mysql://10.11.25.50:3306/jimu}
     username: ${DATABASE_USERNAME:root}
-    password: ${DATABASE_PASSWORD:root}
+    password: ${DATABASE_PASSWORD:password}
   flyway:
     baseline-on-migrate: true
     enabled: true
